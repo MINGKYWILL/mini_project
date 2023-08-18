@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Youtube</title>
+    <script
+      src="https://kit.fontawesome.com/2d323a629b.js"
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="main.js"></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="logo">
+        <i class="fab fa-youtube"></i>
+        <span class="title">Youtube</span>
+      </div>
+      <div class="icons">
+        <i class="fas fa-search"></i>
+        <i class="fas fa-ellipsis-v"></i>
+      </div>
+    </header>
+
+    <!-- Video Player -->
+    <section class="player">
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/8UHBeVZD0XY"
+        frameborder="0"
+        allowfullscreen
+      ></iframe>
+    </section>
+    <div class="infoAndUpNext">
+      <!-- Video Info -->
+      <section class="info">
+        <div class="metadata">
+          <ul class="hashtags">
+            <li>#원지의하루</li>
+            <li>#원지</li>
+            <li>#홀롤롤로</li>
+          </ul>
+          <div class="titleAndButton">
+            <span class="title clamp"
+              >맨하탄 중심에서 카디비 메이크업 받기⎥🇺🇸미국6 ⎥미국 뉴욕
+              여행브이로그2 돌아온 뷰티 관리의샵 미국편. 뉴욕 토박이
+              아티스트로부터 메이크업을 받고 센언니가 되어보았습니다. 뉴욕
+              원디비와 함께 자유의 여신상도 보고 뉴욕 맨하탄을 즐겨보아요.
+            </span>
+            <button class="moreBtn">
+              <i class="fas fa-caret-down"></i>
+            </button>
+          </div>
+          <span class="views">1M views 9 months ago</span>
+        </div>
+        <div class="actions">
+          <li>
+            <button>
+              <i class="active fas fa-thumbs-up"></i><span>1K</span>
+            </button>
+          </li>
+          <li>
+            <button><i class="fas fa-thumbs-down"></i><span>0</span></button>
+          </li>
+          <li>
+            <button><i class="fas fa-share"></i><span>Share</span></button>
+          </li>
+          <li>
+            <button><i class="fas fa-plus"></i><span>Save</span></button>
+          </li>
+          <li>
+            <button>
+              <i class="fab fa-font-awesome-flag"></i><span>Report</span>
+            </button>
+          </li>
+        </div>
+
+        <!-- channel Description -->
+        <div class="channel">
+          <div class="metadata">
+            <a href="https://www.youtube.com/@im1G/videos" target="_blank">
+              <img src="image/channels4_profile.jpg" alt="img"
+            /></a>
+            <div class="info">
+              <a class="name" href="https://www.youtube.com/@im1G/videos"
+                >원지의하루</a
+              >
+              <span class="subscribers">76.5M subscribers</span>
+            </div>
+          </div>
+          <button class="subscribe" onclick="toggleSubscribe()">
+            SUBSCRIBE
+          </button>
+        </div>
+      </section>
+
+      <!-- Up Next -->
+      <section class="upNext">
+        <span class="title">Up next</span>
+        <ul>
+          <li class="item">
+            <div class="img">
+              <!-- <img src="image/img1.png" alt="img" /> -->
+              <iframe
+                width="250"
+                src="https://www.youtube.com/embed/RPJP9_P1YXA"
+                frameborder="0"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="info">
+              <a
+                class="title"
+                href="https://www.youtube.com/watch?v=RPJP9_P1YXA"
+                >돌아온 미국 자취생활 다시 시작된 LA에서 혼자살기⎥🇺🇸이민15</a
+              >
+              <span class="name">원지의하루</span>
+              <span class="views">131M</span>
+            </div>
+            <button class="moreBtn">
+              <i class="fas fa-ellipsis-v"></i>
+            </button>
+          </li>
+
+          <li class="item">
+            <div class="img">
+              <!-- <img src="image/img2.png" alt="img" /> -->
+              <iframe
+                width="250"
+                src="https://www.youtube.com/embed/5zrTDkAeCOE"
+                frameborder="0"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="info">
+              <a
+                class="title"
+                href="https://www.youtube.com/watch?v=5zrTDkAeCOE"
+                >염세주의자의 디즈니랜드 VIP투어(4박5일) 후기⎥🇺🇸미국10</a
+              >
+              <span class="name">원지의하루</span>
+              <span class="views">113M</span>
+            </div>
+            <button class="moreBtn">
+              <i class="fas fa-ellipsis-v"></i>
+            </button>
+          </li>
+
+          <li class="item">
+            <div class="img">
+              <!-- <img src="image/img3.png" alt="img" /> -->
+              <iframe
+                width="250"
+                src="https://www.youtube.com/embed/VB_2y0CLao0"
+                frameborder="0"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="info">
+              <a
+                class="title"
+                href="https://www.youtube.com/watch?v=VB_2y0CLao0"
+                >LA 자취생의 홈카페 로망 실현기⎥🇺🇸이민17</a
+              >
+              <span class="name">원지의하루</span>
+              <span class="views">81M</span>
+            </div>
+            <button class="moreBtn">
+              <i class="fas fa-ellipsis-v"></i>
+            </button>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </body>
+</html>
