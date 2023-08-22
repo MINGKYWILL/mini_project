@@ -1,0 +1,21 @@
+/* Navigation */
+.nav__container {
+  height: 5rem;
+  align-items: center;
+  display: flex;
+}
+
+/* Movie  */
+movie__lists--container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.movie__lists {
+  display: inline-block;
+  width: 400px;
+  height: 60px;
+}
+
+.detail-page {
+  background-color: #101010;
+}
