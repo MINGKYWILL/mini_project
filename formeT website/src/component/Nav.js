@@ -29,7 +29,7 @@ function Nav() {
       <Menu>
         <StyledLink to={`/`}>Home</StyledLink>
         <StyledLink to={`/`}>Search</StyledLink>
-        <StyledLink to={`/`}>Pick</StyledLink>
+        <StyledLink to={`/pick`}>Pick</StyledLink>
       </Menu>
     </NavWrapper>
   );

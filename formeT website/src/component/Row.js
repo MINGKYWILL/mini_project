@@ -18,6 +18,7 @@ function Row({ title, id, fetchUrl, mediaType }) {
     fetchMovieData();
   }, [fetchMovieData]);
 
+  //슬라이딩
   const scrollLeft = () => {
     if (scrollRef.current)
       scrollRef.current.scrollLeft -= window.innerWidth - 5;
