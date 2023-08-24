@@ -15,7 +15,7 @@ function Pick() {
 
   useEffect(() => {
     async function fetchPagesInRange() {
-      const apiKey = "42792e702bdfaa79e4dcffe831c6aa8b";
+      const apiKey = "";
       const baseUrl = `https://api.themoviedb.org/3/discover/movie`;
       const language = "en-US";
 
