@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
 import axios from "../api/axios";
+import styled from "styled-components";
 import GenreFilter from "../component/GenreFilter";
 import RatingFilter from "../component/RatingFilter";
 import YearFilter from "../component/YearFilter";
 import MovieCard from "../component/MovieCard";
+import Nav from "../component/Nav";
 import "./Pick.css";
+import NavFunction from "./Home";
 
 function Pick() {
   const [movies, setMovies] = useState([]);
@@ -13,6 +16,8 @@ function Pick() {
   const [selectedYear, setSelectedYear] = useState("");
   const [loading, setLoading] = useState(true);
 
+  NavFunction();
+
   useEffect(() => {
     async function fetchPagesInRange() {
       const apiKey = "";
@@ -20,7 +25,7 @@ function Pick() {
       const language = "en-US";
 
       const pages = [];
-      for (let page = 1; page <= 11; page++) {
+      for (let page = 1; page <= 7; page++) {
         const response = await axios.get(
           `${baseUrl}?api_key=${apiKey}&language=${language}&page=${page}`
         );
@@ -37,21 +42,32 @@ function Pick() {
   }, []);
 
   return (
-    <div className="pick">
-      <div className="filters">
-        <GenreFilter
-          selectedGenres={selectedGenres}
-          onSelectGenres={setSelectedGenres}
-        />
-        <RatingFilter
-          selectedRating={selectedRating}
-          onSelectRating={setSelectedRating}
-        />
-        <YearFilter
-          selectedYear={selectedYear}
-          onSelectYear={setSelectedYear}
-        />
+    <PageTitle className="pick">
+      <div className="nav__container">
+        <Nav />
       </div>
+      <h1>Pick For You</h1>
+
+      <Filters>
+        <FilterColumn>
+          <GenreFilter
+            selectedGenres={selectedGenres}
+            onSelectGenres={setSelectedGenres}
+          />
+        </FilterColumn>
+        <FilterColumn>
+          <RatingFilter
+            selectedRating={selectedRating}
+            onSelectRating={setSelectedRating}
+          />
+        </FilterColumn>
+        <FilterColumn>
+          <YearFilter
+            selectedYear={selectedYear}
+            onSelectYear={setSelectedYear}
+          />
+        </FilterColumn>
+      </Filters>
       <div className="movie-list">
         {loading ? (
           <p>Loading..</p>
@@ -76,8 +92,33 @@ function Pick() {
           <p>No movies found😢</p>
         )}
       </div>
-    </div>
+    </PageTitle>
   );
 }
 
 export default Pick;
+
+const PageTitle = styled.div`
+  h1 {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    font-size: 3.5rem;
+    text-shadow: #fff 1px 0 5px;
+  }
+`;
+
+const Filters = styled.div`
+  border: 1px solid #e3e3e3;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  margin: 40px 70px 90px 70px;
+  align-items: center;
+`;
+
+const FilterColumn = styled.div`
+  flex: 1;
+  display: flex;
+  justify-content: center;
+`;
