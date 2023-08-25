@@ -2,19 +2,21 @@ import { useEffect, useState } from "react";
 import requests from "../api/requests";
 import axios from "../api/axios";
 import Nav from "../component/Nav";
-import styles from "./Home.css";
-import { styled } from "styled-components";
+import "./Home.css";
 import Row from "../component/Row";
 
 function Home() {
-  useEffect(() => {
-    //for background color
-    document.body.classList.add("detail-page");
+  const NavFunction = () => {
+    useEffect(() => {
+      //for background color
+      document.body.classList.add("detail-page");
 
-    return () => {
-      document.body.classList.remove("detail-page");
-    };
-  }, []);
+      return () => {
+        document.body.classList.remove("detail-page");
+      };
+    }, []);
+  };
+  NavFunction();
   return (
     <div>
       <div className="nav__container">
