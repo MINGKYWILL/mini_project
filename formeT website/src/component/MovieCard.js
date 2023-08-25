@@ -4,13 +4,13 @@ import { styled } from "styled-components";
 function MovieCard({ movie }) {
   return (
     <CardWrapper className="movie-card">
-      <h2>{movie.title}</h2>
-      <Poster
+      <img
         src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
         alt={movie.title}
       />
-      <p>Rating: {movie.vote_average}</p>
-      <p>Release Date: {movie.release_date}</p>
+      <h2>{movie.title}</h2>
+      <p className="rating">Rating: {movie.vote_average}</p>
+      <p className="relaeasedDate">Released Date: {movie.release_date}</p>
     </CardWrapper>
   );
 }
@@ -18,21 +18,36 @@ function MovieCard({ movie }) {
 export default MovieCard;
 
 const CardWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-item: center;
-  padding: 0 1rem;
-  z-index: 10;
-  height: 100%;
+  flex: auto;
+  max-width: calc(18% - 20px); /* Adjust the width of each card */
+  border: 1px solid #e3e3e3;
+  border-radius: 10px;
+  overflow: hidden;
+  box-sizing: border-box;
+  color: #101010;
+  background-color: #fff;
+  transition: transform 0.5s;
 
   h2 {
+    font-size: 16px;
+    padding: 20px 0 5px 10px;
+  }
+  p {
     font-size: 14px;
   }
-`;
 
-const Poster = styled.img`
-  display: flex;
-  height: 250px;
-  width: auto;
+  .rating {
+    padding: 0 10px;
+  }
+  .relaeasedDate {
+    padding: 0 0 10px 10px;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+    // border-radius: 8px 8px 0 0;
+  }
+  &:hover {
+    transform: scale(1.03);
+  }
 `;

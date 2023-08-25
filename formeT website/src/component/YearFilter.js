@@ -1,4 +1,5 @@
 import React from "react";
+import { styled } from "styled-components";
 
 function YearFilter({ selectedYear, onSelectYear }) {
   const handleYearChange = (e) => {
@@ -6,7 +7,7 @@ function YearFilter({ selectedYear, onSelectYear }) {
     console.log(e.target);
   };
   return (
-    <div>
+    <YearWrapper>
       <h2>Released Year</h2>
       <input
         type="range"
@@ -17,8 +18,16 @@ function YearFilter({ selectedYear, onSelectYear }) {
         onChange={handleYearChange}
       />
       <span>{selectedYear}</span>
-    </div>
+    </YearWrapper>
   );
 }
 
 export default YearFilter;
+
+const YearWrapper = styled.div`
+  color: #fff;
+
+  h2 {
+    font-size: 18px;
+  }
+`;

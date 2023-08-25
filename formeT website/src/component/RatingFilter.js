@@ -1,4 +1,5 @@
 import React from "react";
+import { styled } from "styled-components";
 
 function RatingFilter({ selectedRating, onSelectRating }) {
   const handleRatingChange = (e) => {
@@ -6,8 +7,8 @@ function RatingFilter({ selectedRating, onSelectRating }) {
     console.log(e.target);
   };
   return (
-    <div>
-      <h2>⭐️Rating⭐️</h2>
+    <RatingWrapper>
+      <h2>Rating</h2>
       <input
         type="range"
         min="0"
@@ -17,8 +18,16 @@ function RatingFilter({ selectedRating, onSelectRating }) {
         onChange={handleRatingChange}
       />
       <span>{selectedRating}</span>
-    </div>
+    </RatingWrapper>
   );
 }
 
 export default RatingFilter;
+
+const RatingWrapper = styled.div`
+  color: #fff;
+  justify-content: center;
+  h2 {
+    font-size: 18px;
+  }
+`;
